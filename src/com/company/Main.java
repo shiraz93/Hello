@@ -2,12 +2,11 @@ package com.company;
 
 import java.util.Scanner;
 
+
 public class Main {
 
     public static void main(String[] args) {
-
-        Scanner scanner=new Scanner(System.in);
-        Lesson1e e=new Lesson1e();
-        e.Checknumber(scanner.nextInt());
+        Lesson5_1_5 lesson5_1_5 = new Lesson5_1_5();
+        lesson5_1_5.formNewWord("Hello");
     }
 }
