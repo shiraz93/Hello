@@ -12,8 +12,6 @@ public class Lesson5_3_5 {
         boolean ispossible = true;
         OUT:
         for (int i = 0; i < word2.length(); i++) {
-
-
             if (!word1.contains(word2.substring(i, i + 1))) {
                 ispossible = false;
                 break OUT;
