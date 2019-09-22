@@ -1,7 +1,7 @@
 package com.company;
 
 public class Lesson1_2d {
-    void SolveExpression(int x) {
+    void solveExpression(int x) {
         int y;
         if (x == 3) {
             y = 0;
