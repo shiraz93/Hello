@@ -1,7 +1,7 @@
 package com.company;
 
 public class Lesson1c {
-    void  IsPositive(Double number){
+    void  isPositive(Double number){
         if(number>0){
             System.out.println(number+2);
         }else {

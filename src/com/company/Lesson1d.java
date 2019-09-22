@@ -1,7 +1,7 @@
 package com.company;
 
 public class Lesson1d {
-    void Add(Double number){
+    void add(Double number){
         if(number>0){
             System.out.println(number+1);
         }else if(number<0){

@@ -8,6 +8,6 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         Lesson1d d = new Lesson1d();
-        d.Add(scanner.nextDouble());
+        d.add(scanner.nextDouble());
     }
 }
