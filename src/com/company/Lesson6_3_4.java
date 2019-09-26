@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Lesson6_3_4 {
     /**
      * this method get the largest segment which constis of odd numbers
+     *
      * @param list
      */
     void getSegmentOdd(ArrayList<Integer> list) {

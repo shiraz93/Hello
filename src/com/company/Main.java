@@ -24,7 +24,7 @@ public class Main {
         list.add(21);
         list.add(27);
         list.add(31);
-        Lesson6_3_4 lesson6_3_4=new Lesson6_3_4();
+        Lesson6_3_4 lesson6_3_4 = new Lesson6_3_4();
         lesson6_3_4.getSegmentOdd(list);
 
 
