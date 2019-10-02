@@ -13,7 +13,7 @@ public class LessonSevenLevelThreeExcersiceFour {
     void countArrow() {
 
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader("C:/Users/Shiraz/Desktop/text.txt"))) {
-            StringBuffer str = new StringBuffer();
+            StringBuilder str = new StringBuilder();
             String s;
             while ((s = bufferedReader.readLine()) != null) {
                 str.append(s);
