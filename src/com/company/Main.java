@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
-        System.out.println("hello");
-
+        String text = "Java was originally developed by James Gosling ";
+        LessonSevenLevelOneExesiceFour exesiceFour = new LessonSevenLevelOneExesiceFour();
+        exesiceFour.createTextFile(text);
     }
 }
