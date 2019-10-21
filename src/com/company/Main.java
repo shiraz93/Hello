@@ -6,7 +6,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("hello");
+        PracticalLessonExerciseThree exerciseThree = new PracticalLessonExerciseThree();
+        System.out.println(exerciseThree.getCountSymbol("barev"));
+        System.out.println(exerciseThree.getCountSymbol("the best"));
+
 
     }
 }
