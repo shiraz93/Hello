@@ -227,12 +227,10 @@ public class Figure {
                 break;
             }
         }
-        System.out.println(carryDirection);
         if (carryDirection != 0) {
 
             if (carryDirection == 1) {
                 x = 0;
-                System.out.println("right");
             } else if (carryDirection == -1) {
                 if (type == 0) {
                     x = 6;
