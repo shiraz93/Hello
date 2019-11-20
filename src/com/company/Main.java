@@ -6,7 +6,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        System.out.println("hello");
+        String firstNumber = "9600000000000000000000000000000000000";
+        String secondNumber = "5300000000000000000000000000000000000";
 
+        LessonTenLevelThreeExersiceTwo levelThreeExersiceTwo = new LessonTenLevelThreeExersiceTwo();
+        levelThreeExersiceTwo.minusLargeNumbers(firstNumber, secondNumber);
     }
 }
