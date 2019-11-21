@@ -1,14 +1,18 @@
 package com.company;
 
 public enum TetrisShape {
-
-    BLOCK_SIZE(25), // size of one block
+    // size of one block
+    BLOCK_SIZE(25),
     ARC_RADIUS(6),
-    FIELD_WIDTH(10), //count of block each horizontal line
-    FIELD_HEIGHT(18),//count of block each vertical line
-    FIELD_DX(7), // determined experimentally
+    //count of block each horizontal line
+    FIELD_WIDTH(10),
+    //count of block each vertical line
+    FIELD_HEIGHT(18),
+    // determined experimentally
+    FIELD_DX(7),
     FIELD_DY(26),
-    LEFT(37), // key codes
+    // key codes
+    LEFT(37),
     UP(38),
     RIGHT(39),
     DOWN(40);

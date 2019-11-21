@@ -29,6 +29,11 @@ public class Main extends JFrame {
     }
 
     public Main() {
+        createWindow();
+        addKeyListener();
+    }
+
+    void createWindow() {
         canvas.setFigure(figure);
         setTitle(TITLE_OF_PROGRAM);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -36,6 +41,12 @@ public class Main extends JFrame {
                 TetrisShape.FIELD_HEIGHT.size() * TetrisShape.BLOCK_SIZE.size() + TetrisShape.FIELD_HEIGHT.size() + 22);
         canvas.setBackground(Color.black);
         setResizable(false);
+        add(BorderLayout.CENTER, canvas);
+        setVisible(true);
+        Arrays.fill(mine[TetrisShape.FIELD_HEIGHT.size()], 1);
+    }
+
+    void addKeyListener() {
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -56,10 +67,6 @@ public class Main extends JFrame {
                 canvas.repaint();
             }
         });
-        add(BorderLayout.CENTER, canvas);
-        setVisible(true);
-        Arrays.fill(mine[TetrisShape.FIELD_HEIGHT.size()], 1);
-
     }
 
     void start() {

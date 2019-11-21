@@ -10,8 +10,8 @@ public class Figure {
     private List<Block> figure = new ArrayList<>();
     private int[][] shape = new int[4][4];
     private int size = 4;
-    private int x = 3;
-    private int y = 0;
+    private int coordinatX = 3;
+    private int coordinatY = 0;
     private int type;
     private int color;
     private final int colors[] = {0x00f0f0, 0xf0f000, 0x0000f0, 0xf0a000, 0x00f000, 0xa000f0, 0xf00000};
@@ -30,7 +30,7 @@ public class Figure {
         type = random.nextInt(SHAPES.length);
         color = colors[type];
         if (type == 0 || type == 1) {
-            y = -1;
+            coordinatY = -1;
 
         } else {
             size = size - 1;
@@ -43,13 +43,13 @@ public class Figure {
     }
 
     /**
-     * check shape matrix where  if element is greater than zero create block take each block coordinate
+     * Check shape matrix where  if element is greater than zero create block take each block coordinate.
      */
     void createFigure() {
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (shape[j][i] == 1) {
-                    figure.add(new Block(i + x, j + y));
+                    figure.add(new Block(i + coordinatX, j + coordinatY));
                 }
             }
         }
@@ -58,10 +58,10 @@ public class Figure {
     /**
      * Draws figure which is contain  outlined rectangles  using this graphics current color.
      *
-     * @param g
+     * @param graphics
      */
-    void paint(Graphics g) {
-        figure.forEach(p -> p.paint(g, color));
+    void paint(Graphics graphics) {
+        figure.forEach(p -> p.paint(graphics, color));
     }
 
     /**
@@ -73,7 +73,7 @@ public class Figure {
     boolean isTouchGround(int mine[][]) {
         boolean isTouch = false;
         for (Block block : figure) {
-            if (mine[block.getY() + 1][block.getX()] > 0) {
+            if (mine[block.getCoordinatY() + 1][block.getCoordinatX()] > 0) {
                 isTouch = true;
                 break;
             } else {
@@ -91,16 +91,16 @@ public class Figure {
      */
     void leaveOnTheGround(int mine[][]) {
 
-        figure.forEach(p -> mine[p.getY()][p.getX()] = color);
+        figure.forEach(p -> mine[p.getCoordinatY()][p.getCoordinatX()] = color);
     }
 
     void stepDown() {
-        figure.forEach(p -> p.setY(p.getY() + 1));
-        y++;
+        figure.forEach(p -> p.setCoordinatY(p.getCoordinatY() + 1));
+        coordinatY++;
     }
 
     /**
-     * is step down while figure is not touch ground or another figure
+     * figure is step down while figure is not touch ground or another figure
      *
      * @param mine
      */
@@ -111,7 +111,7 @@ public class Figure {
     }
 
     /**
-     * move figure left or right
+     * Move figure left or right
      *
      * @param keycode is code pressed keyboard
      * @param mine
@@ -120,13 +120,13 @@ public class Figure {
 
         if (!isTouchWall(mine, keycode)) {
             if (keycode == TetrisShape.LEFT.size()) {
-                figure.forEach(p -> p.setX(p.getX() - 1));
-                x--;
+                figure.forEach(p -> p.setCoordinatX(p.getCoordinatX() - 1));
+                coordinatX--;
             }
             if (keycode == TetrisShape.RIGHT.size()) {
 
-                figure.forEach(p -> p.setX(p.getX() + 1));
-                x++;
+                figure.forEach(p -> p.setCoordinatX(p.getCoordinatX() + 1));
+                coordinatX++;
             }
         }
 
@@ -142,12 +142,12 @@ public class Figure {
     boolean isTouchWall(int[][] mine, int direction) {
         boolean isTouch = false;
         for (Block block : figure) {
-            if (direction == TetrisShape.LEFT.size() && (block.getX() == 0 || mine[block.getY()][block.getX() - 1] > 0)) {
+            if (direction == TetrisShape.LEFT.size() && (block.getCoordinatX() == 0 || mine[block.getCoordinatY()][block.getCoordinatX() - 1] > 0)) {
 
                 isTouch = true;
                 break;
 
-            } else if (direction == TetrisShape.RIGHT.size() && (block.getX() == TetrisShape.FIELD_WIDTH.size() - 1 || mine[block.getY()][block.getX() + 1] > 0)) {
+            } else if (direction == TetrisShape.RIGHT.size() && (block.getCoordinatX() == TetrisShape.FIELD_WIDTH.size() - 1 || mine[block.getCoordinatY()][block.getCoordinatX() + 1] > 0)) {
                 isTouch = true;
                 break;
 
@@ -219,10 +219,10 @@ public class Figure {
         boolean isCan = true;
         for (Block block :
                 figure) {
-            if (block.getX() == 0) {
+            if (block.getCoordinatX() == 0) {
                 carryDirection = 1;
                 break;
-            } else if (block.getX() == 9) {
+            } else if (block.getCoordinatX() == 9) {
                 carryDirection = -1;
                 break;
             }
@@ -230,12 +230,12 @@ public class Figure {
         if (carryDirection != 0) {
 
             if (carryDirection == 1) {
-                x = 0;
+                coordinatX = 0;
             } else if (carryDirection == -1) {
                 if (type == 0) {
-                    x = 6;
+                    coordinatX = 6;
                 } else {
-                    x = 7;
+                    coordinatX = 7;
                 }
 
             }
@@ -244,7 +244,7 @@ public class Figure {
             for (int y = 0; y < size; y++)
                 if (shape[y][x] == 1) {
 
-                    if (mine[y + this.y][x + this.x] > 0) {
+                    if (mine[y + this.coordinatY][x + this.coordinatX] > 0) {
                         isCan = false;
                         break;
                     }
