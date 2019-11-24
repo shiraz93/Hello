@@ -85,7 +85,7 @@ public class Figure {
     }
 
     /**
-     * is get coordinate each of element of figure and as index of mine matrix get color
+     *  Get coordinate each of block of figure and as index of mine matrix and put color.
      *
      * @param mine
      */
@@ -100,7 +100,7 @@ public class Figure {
     }
 
     /**
-     * figure is step down while figure is not touch ground or another figure
+     * Figure is step down while figure is not touch ground or another figure.
      *
      * @param mine
      */
@@ -111,9 +111,9 @@ public class Figure {
     }
 
     /**
-     * Move figure left or right
+     * Move figure left or right.
      *
-     * @param keycode is code pressed keyboard
+     * @param keycode is code pressed keyboard.
      * @param mine
      */
     void move(int keycode, int mine[][]) {
@@ -133,10 +133,10 @@ public class Figure {
     }
 
     /**
-     * check figure is touched wall or another figure
+     * Check figure is touched wall or another figure.
      *
      * @param mine
-     * @param direction
+     * @param direction move direction.
      * @return {@code true} if figure is touched wall left,right or another figure, {@code false} otherwise.
      */
     boolean isTouchWall(int[][] mine, int direction) {
@@ -160,7 +160,7 @@ public class Figure {
     }
 
     /**
-     * is check there are free space for new figure
+     *  Check there are free space for new figure.
      *
      * @param mine
      * @return {@code false} if there are free space for  new figure{@code true} otherwise.
@@ -177,7 +177,7 @@ public class Figure {
     }
 
     /**
-     * is rotate figure 90 degree
+     *  Rotate figure 90 degree.
      *
      * @param mine
      */
@@ -209,7 +209,7 @@ public class Figure {
     }
 
     /**
-     * is check are there free space for rotated figure
+     *  Check are there free space for rotated figure.
      *
      * @param mine
      * @return{@code true}if there are free space for rotated figure  , {@code false} if will touch another figure.

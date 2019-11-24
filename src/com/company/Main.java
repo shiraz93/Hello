@@ -30,9 +30,12 @@ public class Main extends JFrame {
 
     public Main() {
         createWindow();
-        addKeyListener();
+        addKeysListener();
     }
 
+    /**
+     * Create Window for game.
+     */
     void createWindow() {
         canvas.setFigure(figure);
         setTitle(TITLE_OF_PROGRAM);
@@ -46,7 +49,10 @@ public class Main extends JFrame {
         Arrays.fill(mine[TetrisShape.FIELD_HEIGHT.size()], 1);
     }
 
-    void addKeyListener() {
+    /**
+     * Add keys event.
+     */
+    void addKeysListener() {
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -91,7 +97,7 @@ public class Main extends JFrame {
     }
 
     /**
-     * is check each of rows of mine if is filling this rows fill  0 value and from this rows high block drop
+     * Check each of rows of mine if is filling this rows fill  0 value and from this rows high block drop.
      */
     void checkFilling() { // check filling rows
         List<Integer> list = new ArrayList<>();

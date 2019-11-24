@@ -6,6 +6,12 @@ public class Block {
     private int coordinatX;
     private int coordinatY;
 
+    /**
+     * Create constructor.
+     *
+     * @param coordinatX  coordinat x.
+     * @param coordinatY  coordinat y.
+     */
     public Block(int coordinatX, int coordinatY) {
         this.coordinatX = coordinatX;
         this.coordinatY = coordinatY;
@@ -28,10 +34,10 @@ public class Block {
     }
 
     /**
-     * Draws an outlined round-cornered rectangle using this graphics context's current color.
+     * Draws an outlined round-cornered rectangle.
      *
      * @param graphics
-     * @param color    the color block
+     * @param color    the color block.
      */
     void paint(Graphics graphics, int color) {
         graphics.setColor(new Color(color));

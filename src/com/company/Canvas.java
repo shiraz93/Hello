@@ -27,7 +27,7 @@ public class Canvas extends JPanel {
     }
 
     /**
-     * checked mine matrix where element contain color of int type , Paints a 3-D highlighted rectangle filled with the color .
+     *  Paints a 3-D highlighted rectangle filled with the color .
      *
      * @param graphics
      */
@@ -51,7 +51,7 @@ public class Canvas extends JPanel {
     }
 
     /**
-     * set the figure
+     * Set the figure.
      *
      * @param figure
      */
@@ -60,7 +60,7 @@ public class Canvas extends JPanel {
     }
 
     /**
-     * set the gameover
+     * Set the gameover.
      *
      * @param gameOver
      */
