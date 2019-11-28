@@ -5,8 +5,9 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
-        System.out.println("hello");
-
+        Scanner scanner = new Scanner(System.in);
+        String statment = scanner.nextLine();
+        LessonEightLevelThreeExerciseTwo levelThreeExerciseTwo = new LessonEightLevelThreeExerciseTwo();
+        levelThreeExerciseTwo.convertToMorseCode(statment.toUpperCase());
     }
 }
