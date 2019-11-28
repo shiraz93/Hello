@@ -1,42 +1,33 @@
 package com.company;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.awt.*;
 
+@Setter
+@Getter
 public class Block {
+
     private int coordinatX;
     private int coordinatY;
 
     /**
      * Create constructor.
      *
-     * @param coordinatX  coordinat x.
-     * @param coordinatY  coordinat y.
+     * @param coordinatX coordinat x.
+     * @param coordinatY coordinat y.
      */
     public Block(int coordinatX, int coordinatY) {
         this.coordinatX = coordinatX;
         this.coordinatY = coordinatY;
     }
 
-    public int getCoordinatX() {
-        return coordinatX;
-    }
-
-    public void setCoordinatX(int coordinatX) {
-        this.coordinatX = coordinatX;
-    }
-
-    public int getCoordinatY() {
-        return coordinatY;
-    }
-
-    public void setCoordinatY(int coordinatY) {
-        this.coordinatY = coordinatY;
-    }
 
     /**
      * Draws an outlined round-cornered rectangle.
      *
-     * @param graphics
+     * @param graphics Grapgics.
      * @param color    the color block.
      */
     void paint(Graphics graphics, int color) {

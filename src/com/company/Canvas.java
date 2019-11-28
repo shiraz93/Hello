@@ -1,12 +1,16 @@
 package com.company;
 
+import lombok.Setter;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class Canvas extends JPanel {
-    private int mine[][];
+    @Setter
     private Figure figure;
+    @Setter
     private boolean gameOver = false;
+    private int mine[][];
     final int[][] GAME_OVER_MSG = {
             {0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 1, 0},
             {1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1},
@@ -21,15 +25,20 @@ public class Canvas extends JPanel {
             {1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0},
             {0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 1, 0}};
 
+    /**
+     * Create constructor.
+     *
+     * @param mine Matrix.
+     */
     public Canvas(int mine[][]) {
         this.mine = mine;
 
     }
 
     /**
-     *  Paints a 3-D highlighted rectangle filled with the color .
+     * Paints a 3-D highlighted rectangle filled with the color .
      *
-     * @param graphics
+     * @param graphics Graphics.
      */
     @Override
     public void paint(Graphics graphics) {
@@ -50,22 +59,6 @@ public class Canvas extends JPanel {
         }
     }
 
-    /**
-     * Set the figure.
-     *
-     * @param figure
-     */
-    public void setFigure(Figure figure) {
-        this.figure = figure;
-    }
 
-    /**
-     * Set the gameover.
-     *
-     * @param gameOver
-     */
-    public void setGameOver(boolean gameOver) {
-        this.gameOver = gameOver;
-    }
 }
 

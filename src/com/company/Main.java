@@ -28,6 +28,9 @@ public class Main extends JFrame {
 
     }
 
+    /**
+     * Create constructor.
+     */
     public Main() {
         createWindow();
         addKeysListener();
@@ -75,6 +78,9 @@ public class Main extends JFrame {
         });
     }
 
+    /**
+     * Start.
+     */
     void start() {
         while (!gameOver) {
             try {

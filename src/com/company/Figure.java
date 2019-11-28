@@ -25,7 +25,9 @@ public class Figure {
             {{1, 1, 0, 0}, {0, 1, 1, 0}, {0, 0, 0, 0}, {0, 0, 0, 0}}  // Z
     };
 
-
+    /**
+     * Create constructor.
+     */
     public Figure() {
         type = random.nextInt(SHAPES.length);
         color = colors[type];
@@ -58,7 +60,7 @@ public class Figure {
     /**
      * Draws figure which is contain  outlined rectangles  using this graphics current color.
      *
-     * @param graphics
+     * @param graphics Graphics
      */
     void paint(Graphics graphics) {
         figure.forEach(p -> p.paint(graphics, color));
@@ -67,7 +69,7 @@ public class Figure {
     /**
      * is check figure touched ground or another figure
      *
-     * @param mine
+     * @param mine Matrix.
      * @return{@code true} if figure is touched ground or another figure , {@code false} otherwise.
      */
     boolean isTouchGround(int mine[][]) {
@@ -85,9 +87,9 @@ public class Figure {
     }
 
     /**
-     *  Get coordinate each of block of figure and as index of mine matrix and put color.
+     * Get coordinate each of block of figure and as index of mine matrix and put color.
      *
-     * @param mine
+     * @param mine Matrix.
      */
     void leaveOnTheGround(int mine[][]) {
 
@@ -102,7 +104,7 @@ public class Figure {
     /**
      * Figure is step down while figure is not touch ground or another figure.
      *
-     * @param mine
+     * @param mine Matrix.
      */
     void drop(int[][] mine) {
         while (!isTouchGround(mine)) {
@@ -114,7 +116,7 @@ public class Figure {
      * Move figure left or right.
      *
      * @param keycode is code pressed keyboard.
-     * @param mine
+     * @param mine    Matrix.
      */
     void move(int keycode, int mine[][]) {
 
@@ -135,7 +137,7 @@ public class Figure {
     /**
      * Check figure is touched wall or another figure.
      *
-     * @param mine
+     * @param mine      Matrix.
      * @param direction move direction.
      * @return {@code true} if figure is touched wall left,right or another figure, {@code false} otherwise.
      */
@@ -160,9 +162,9 @@ public class Figure {
     }
 
     /**
-     *  Check there are free space for new figure.
+     * Check there are free space for new figure.
      *
-     * @param mine
+     * @param mine Matrix.
      * @return {@code false} if there are free space for  new figure{@code true} otherwise.
      */
     boolean isCrossGround(int mine[][]) {
@@ -177,9 +179,9 @@ public class Figure {
     }
 
     /**
-     *  Rotate figure 90 degree.
+     * Rotate figure 90 degree.
      *
-     * @param mine
+     * @param mine Matrix.
      */
     void rotate(int mine[][]) {
 
@@ -209,9 +211,9 @@ public class Figure {
     }
 
     /**
-     *  Check are there free space for rotated figure.
+     * Check are there free space for rotated figure.
      *
-     * @param mine
+     * @param mine Matrix.
      * @return{@code true}if there are free space for rotated figure  , {@code false} if will touch another figure.
      */
     boolean isCanRotate(int[][] mine) {
