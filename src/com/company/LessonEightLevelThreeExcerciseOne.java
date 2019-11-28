@@ -5,10 +5,10 @@ import java.util.List;
 
 public class LessonEightLevelThreeExcerciseOne {
     /**
-     * Find  horse's possible steps
+     * Find  horse's possible steps․
      *
-     * @param coordinatX coordinat x
-     * @param coordinatY coordinat y
+     * @param coordinatX coordinat x․
+     * @param coordinatY coordinat y․
      */
     void findHorsePossibleSteps(int coordinatX, int coordinatY) {
         List<String> stepsHorse = new ArrayList<>();
