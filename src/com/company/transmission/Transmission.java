@@ -1,5 +1,8 @@
 package com.company.transmission;
 
 public interface Transmission {
-     void transmissionType();
+    /**
+     * Print transmission type.
+     */
+    public void transmissionType();
 }
