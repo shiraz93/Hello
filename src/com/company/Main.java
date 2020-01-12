@@ -1,12 +1,12 @@
 package com.company;
 
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
-
-        System.out.println("hello");
+        ArmenianChannelsList armenianChannelsList = new ArmenianChannelsList();
+        UsaChannelsList usaChannelsList = new UsaChannelsList();
+        IPTV iptv = new IPTV(armenianChannelsList, usaChannelsList);
+        iptv.printChannels();
 
     }
 }
